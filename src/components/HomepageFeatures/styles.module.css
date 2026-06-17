@@ -1,0 +1,139 @@
+.features {
+  padding: 5rem 0;
+  background: var(--ltc-surface-sunken);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section header */
+.featuresHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.sectionLabel::after {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: var(--brand-accent);
+  opacity: 0.35;
+}
+
+.featuresTitle {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--ltc-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.featuresSubtitle {
+  font-size: 1.05rem;
+  color: var(--ltc-text-tertiary);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Bento-style grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+}
+
+.featureCard {
+  background: var(--ltc-surface-raised);
+  border: 1px solid var(--ltc-border-default);
+  border-radius: 14px;
+  padding: 1.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--ltc-shadow-xs);
+  grid-column: span 4;
+}
+
+.featureCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ltc-shadow-lg);
+  border-color: var(--ltc-border-strong);
+}
+
+/* Icon */
+.featureIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--ltc-surface-sunken);
+  border: 1px solid var(--ltc-border-subtle);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: all 0.25s ease;
+}
+
+.featureCard:hover .featureIconWrap {
+  background: color-mix(in srgb, var(--brand-accent) 6%, var(--ltc-surface-sunken));
+  border-color: color-mix(in srgb, var(--brand-accent) 15%, transparent);
+}
+
+.featureIcon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.featureTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--ltc-text-primary);
+}
+
+.featureDescription {
+  font-size: 0.88rem;
+  color: var(--ltc-text-tertiary);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Responsive */
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 3.5rem 0;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .featureCard {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard {
+    grid-column: span 1;
+    padding: 1.5rem;
+  }
+}
